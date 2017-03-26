@@ -187,23 +187,6 @@ class TestWeek < Test::Unit::TestCase
     end
   end
 
-  def test_beginning_of_week
-    [Date,Time].each do |klass|
-      assert_equal klass.new(2012,11,25), klass.new(2012,11,25).beginning_of_week
-      assert_equal klass.new(2012,11,25), klass.new(2012,11,26).beginning_of_week
-      assert_equal klass.new(2012,11,25), klass.new(2012,11,30).beginning_of_week
-    end
-  end
-
-  def test_end_of_week
-    [Date,Time].each do |klass|
-      assert_equal klass.new(2012,12,1), klass.new(2012,12,1).end_of_week
-      assert_equal klass.new(2012,12,8), klass.new(2012,12,2).end_of_week
-      assert_equal klass.new(2012,12,8), klass.new(2012,12,3).end_of_week
-      assert_equal klass.new(2012,12,8), klass.new(2012,12,7).end_of_week
-    end
-  end
-
   def test_next_week
     [Date,Time].each do |klass|
       assert_equal klass.new(2012,12,8), klass.new(2012,12,1).next_week
